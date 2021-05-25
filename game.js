@@ -11,7 +11,7 @@ var myGameArea = {
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setTimeout(stop, 20000);
-        this.interval = setInterval(directionChange, 500);
+        this.interval = setInterval(directionChange, 150);
         this.interval = setInterval(updateGameArea, 50);
 
     },
@@ -22,6 +22,7 @@ var myGameArea = {
         clearInterval(this.interval);
     }
 };
+
 
 function stop() {
     myGameArea.stop();
@@ -88,32 +89,12 @@ function Dot(posx, posy, velx, vely, accx, accy, width, height) {
 }
 
 function getRandom() {
-    var rnd = (Math.random() * 10) - 5;
-    /*if (rnd > 1) {
-        return rnd;
-    } else if (rnd < -1){
-        return rnd;
-    } else if (rnd < 0){
-        rnd += -1;
-        console.log("rnd edited = " + rnd);
-        return rnd;
-    } else if (rnd > 0) {
-        rnd += 1;
-        console.log("rnd edited = " + rnd);
-        return rnd;
-    } else {
-        console.log("no conditions match for getRandom(), rnd = " + rnd)
-    }*/
+    let rnd = (Math.random() * 10) - 5;
     return rnd;
 }
 
 function getAccx() {
-    /*if (velx < 0) {
-        accx = -1;
-    } else {
-        accx = 1;
-    }*/
-    accx = 2;
+    let accx = 2;
     return accx;
 }
 
